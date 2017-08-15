@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM registry.cn-beijing.aliyuncs.com/nunchuk/alpine:latest
 
 RUN apk --update add nginx php5-fpm && \
     mkdir -p /run/nginx
