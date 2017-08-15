@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>Hello world!</title>
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Droid+Sans+Mono|Indie+Flower|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<style>
 	body {
 		background-color: white;
@@ -13,11 +13,20 @@
 	#logo {
 		margin-bottom: 40px;
 	}
+
+	h1 {
+	  font-family: 'Indie Flower', cursive;
+	  font-size:80px;
+	}
+
+	h3 {
+	  font-family: 'Droid Sans Mono', monospace;
+	}
 	</style>
 </head>
 <body>
-	<img id="logo" src="logo.png" />
 	<h1><?php echo "Hello ".($_ENV["NAME"]?$_ENV["NAME"]:"world")."!"; ?></h1>
+	<img id="logo" src="logo.png" />
 	<?php if($_ENV["HOSTNAME"]) {?><h3>My hostname is <?php echo $_ENV["HOSTNAME"]; ?></h3><?php } ?>
 	<?php
 	$links = [];
