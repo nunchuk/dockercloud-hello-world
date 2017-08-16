@@ -1,3 +1,8 @@
+############################################################ 
+# Dockerfile to build Hello image 
+# Based on Alpine:3.5
+############################################################
+
 FROM registry.cn-beijing.aliyuncs.com/nunchuk/alpine:latest
 
 RUN apk --update add nginx php5-fpm && \

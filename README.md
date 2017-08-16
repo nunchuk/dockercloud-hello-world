@@ -1,30 +1,28 @@
 hello-world
 ===========
 
-[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/)
-
 Sample docker image to test docker deployments
 
 ## Running locally
 
-Build and run using Docker Compose:
+### Using Docker-CLI:
+
+	$ docker run --rm -ti -p 8080:80 --name hello registry.cn-beijing.aliyuncs.com/nunchuk/hello-world:latest
+
+### Using Docker Compose:
 
 	$ git clone https://github.com/docker/dockercloud-hello-world
 	$ cd dockercloud-hello-world
 	$ docker-compose up
 
+### Using Docker Swarm Mode:
 
-## Deploying to Docker Cloud
+	$ docker service create --publish 8080:80 --name hello --replicas=3 --constraint "node.role != manager" registry.cn-beijing.aliyuncs.com/nunchuk/hello-world:latest
 
-[Install the Docker Cloud CLI](https://docs.docker.com/docker-cloud/tutorials/installing-cli/)
+Point your browser to `http://localhost:8080`
 
-	$ docker login
-	$ docker-cloud stack up
+![-2017-08-16- 10 54 59](https://user-images.githubusercontent.com/16042528/29346043-4f017144-8275-11e7-9081-1bc904a4c622.png)
 
-Hello world!
-
-## Configuration
-
-|Environment Variable|Default|Description|
-|:-----:|:-----:|:----------|
-|LISTEN_PORT|80|Set the Listen Port to access the hello-world container if it has the same Service Port.
+Contributors
+-------------------
+* XinYe (nunchuk@live.com)
